@@ -1,0 +1,197 @@
+(function ($, window) {
+  'use strict';
+
+  var pluginName = 'ariaNotifications',
+    a = {
+      aHi: 'aria-hidden',
+      r: 'role',
+      t: 'true',
+      f: 'false'
+    },
+    win = $(window);
+
+  //-----------------------------------------
+  // The actual plugin constructor
+  function AriaNotifications(element, userSettings) { 
+    var self = this;
+    self.settings = $.extend({}, $.fn[pluginName].defaultSettings, userSettings);
+    self.element = $(element);
+    self.message = self.element.find('.' + self.settings.messageClass);
+    self.dismissBtn = self.element.find('.' + self.settings.dismissBtnClass).length > 0 ? self.element.find('.' + self.settings.dismissBtnClass) : false;
+
+    //Init plugin
+    self.init();
+  }
+
+  // Avoid Plugin.prototype conflicts
+  $.extend(AriaNotifications.prototype, {
+    init: function () {
+      var self = this,
+        settings = self.settings;
+
+      /*
+       * Init notification by hiding the whole markup
+       * (only if cssTransition are disabled)
+       */
+      if (!settings.cssTransitions) {
+        self.element.hide();
+      }
+
+
+      //Init message by setting role and aria-hidden attributes
+      self.message.attr(a.aHi, a.t);
+
+      if (settings.alert) {
+        self.message.attr(a.r, 'alert');
+      } else {
+        self.message.attr(a.r, 'status');
+      }
+
+      //init status object (true when notification is visible, false when notification is hidden)
+      self.elementStatus = false;
+
+      //Trigger custom event on window after initialisation
+      win.trigger(pluginName + '.initialised', [self]);
+    },
+    showNotification: function () {
+      var self = this,
+        settings = self.settings;
+
+
+      //exit function if notification is alredy visible
+      if (self.elementStatus) {
+        return;
+      }
+
+      //Fade in notification if css transitions are disabled
+      if (!settings.cssTransitions) {
+        self.element.fadeIn(self.settings.fadeInSpeed);
+      }
+
+      //add visible class to notification
+      self.element.addClass(self.settings.notificationVisibleClass);
+
+      //Expose notification to AT by setting aria-hiddent to false
+      self.message.attr(a.aHi, a.f);
+
+      /*
+       * Init dismiss btn if in markup.
+       * We bind dismiss event on click event, but just once.
+       */
+      if (self.dismissBtn) {
+        self.dismissBtn.one('click.' + pluginName, function () {
+          self.dismissNotification();
+        });
+      }
+
+      /*
+       * Dismiss button afer X time, if timer is not false
+       * and notification was not yet dismissed by user
+       */
+      if (settings.timer !== false) {
+        setTimeout(function () {
+          self.dismissNotification();
+        }, settings.timer);
+      }
+
+      //Update notification status 
+      self.elementStatus = true;
+
+      //Trigger custom event on window after notification is shown
+      win.trigger(pluginName + '.show', [self]);
+    },
+    dismissNotification: function () {
+      var self = this,
+        settings = self.settings;
+
+      //exit function if notification is alredy visible
+      if (!self.elementStatus) {
+        return;
+      }
+
+      //Remove visible class
+      self.element.removeClass(self.settings.notificationVisibleClass);
+
+      //fade out notification if css transitions are disabled
+      if (!settings.cssTransitions) {
+        self.element.fadeOut(self.settings.fadeOutSpeed);
+      }
+
+      //Hide notification to AT by setting aria-hiddent to false
+      self.message.attr(a.aHi, a.t);
+
+      //Update notification status    
+      self.elementStatus = false;
+
+      //Trigger custom event on window after notification has been hidden
+      win.trigger(pluginName + '.hide', [self]);
+    },
+    methodCaller: function (methodArg) {
+      var self = this,
+        elementsStatus = self.elementsStatus;
+      /*
+       * Call methods on notification element.
+       * Currently we have only two methods implemented in the plugin: show and dismiss.
+       */
+      switch (methodArg) {
+        case 'show':
+          if (!self.elementsStatus) {
+            self.showNotification(methodArg);
+          }
+          break;
+        case 'dismiss':
+          if (self.elementStatus) {
+            self.dismissNotification(methodArg);
+          }
+          break;
+      }
+    }
+  });
+
+
+
+  // A really lightweight plugin wrapper around the constructor,
+  // preventing against multiple instantiations
+  $.fn[pluginName] = function (userSettings) {
+    return this.each(function () {
+      var self = this;
+      /*
+       * If following conditions matches, then the plugin must be initialsied:
+       * Check if the plugin is instantiated for the first time
+       * Check if the argument passed is an object or undefined (no arguments)
+       */
+      if (!$.data(self, 'plugin_' + pluginName) && (typeof userSettings === 'object' || typeof userSettings === 'undefined')) {
+        $.data(self, 'plugin_' + pluginName, new AriaNotifications(self, userSettings));
+      } else if (typeof userSettings === 'string') {
+        $.data(self, 'plugin_' + pluginName).methodCaller(userSettings);
+      }
+    });
+  };
+
+  //Define default settings
+  $.fn[pluginName].defaultSettings = {
+    notificationVisibleClass: 'notification_visible',
+    messageClass: 'notification__message',
+    dismissBtnClass: 'notification__dismiss-btn',
+    alert: false,
+    timer: false,
+    fadeInSpeed: 200,
+    fadeOutSpeed: 800,
+    cssTransitions: false
+  }
+}(jQuery, window));
+
+
+
+
+
+$(document).ready(function () {
+  'use strict';
+
+  var notification = $('.notification').ariaNotifications({
+    timer: 10000,
+    alert: true
+  });
+
+  notification.ariaNotifications('show');
+});
