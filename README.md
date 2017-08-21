@@ -32,7 +32,7 @@ cssTransitions | false | bool | Use css transitions to show and hide a notificat
 
 ## Usage
 
-1. Include the JS script **aria-notifications.js** - or the minified production script **aria-tabs.min.js** - in the head or the body of your HTML file.
+1. Include the JS script **aria-notifications.js** - or the minified production script **aria-notifications.min.js** - in the head or the body of your HTML file.
 2. Style the notification with CSS (at this time no CSS styles are included with the plugin). 
 3. Initialise the widget within an inline script tag, or in an external JS file.
 
