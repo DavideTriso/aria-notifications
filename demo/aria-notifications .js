@@ -22,7 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-(function ($, window) {
+(function (factory) {
+  if (typeof define === 'function' && define.amd) {
+    define(['jquery'], factory);
+  }
+}(function ($, window) {
   'use strict';
 
   var pluginName = 'ariaNotifications',
@@ -203,7 +207,7 @@ SOFTWARE.
     fadeOutSpeed: 800,
     cssTransitions: false
   }
-}(jQuery, window));
+}(jQuery, window)));
 
 
 
