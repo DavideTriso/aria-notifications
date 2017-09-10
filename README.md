@@ -5,6 +5,7 @@ jQuery plugin for **accessible** notifications. **WAI ARIA 1.1** compliant.
 * User friendly and accessible
 * Only 2KB (minified).
 * Runs in strict mode.
+* Compatible with amd and require.js
 
 ## Dependencies
 
