@@ -19,7 +19,7 @@ Developed and tested with jQuery 3.2.1
 
 ## Options
 
-Name | Default | Type | Description 
+Name | Default | Type | Description
 -----|---------|------|-------------
 notificationVisibleClass | notification_visible | string | Class added from plugin to a notification, when visible
 messageClass | notification__message | string | Class used from plugin to select the actual message inside a notification
@@ -34,7 +34,7 @@ cssTransitions | false | bool | Use css transitions to show and hide a notificat
 ## Usage
 
 1. Include the JS script **aria-notifications.js** - or the minified production script **aria-notifications.min.js** - in the head or the body of your HTML file.
-2. Style the notification with CSS (at this time no CSS styles are included with the plugin). 
+2. Style the notification with CSS (at this time no CSS styles are included with the plugin).
 3. Initialise the widget within an inline script tag, or in an external JS file.
 
 
