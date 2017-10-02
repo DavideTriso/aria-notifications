@@ -24,7 +24,11 @@ SOFTWARE.
 
 (function (factory) {
   if (typeof define === 'function' && define.amd) {
-    define(['jquery'], factory);
+    define(['jquery'], factory); //AMD
+  } else if (typeof exports === 'object') {
+    module.exports = factory(require('jquery')); //CommonJS
+  } else {
+    factory(jQuery, window);
   }
 }(function ($, window) {
   'use strict';
@@ -207,4 +211,4 @@ SOFTWARE.
     fadeOutSpeed: 800,
     cssTransitions: false
   }
-}(jQuery, window)));
+}));

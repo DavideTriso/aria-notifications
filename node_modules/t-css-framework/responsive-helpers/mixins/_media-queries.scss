@@ -1,0 +1,69 @@
+//----------------------------
+// MEDIA QUERY MIN-WIDTH
+// Set CSS properties for a given media query without writing each time '@media screen and (min-width: xxx)'.
+//----------------------------
+//USAGE EXAMPLE
+/*
+.demo {
+    background-color: red;
+    @include mqMin(w4) {
+	    background-color: blue;
+	}
+}
+*/
+@mixin mqMin($breakpointName) {
+   @if map-has-key($breakpoints, $breakpointName){
+    @media screen and (min-width: #{inspect(map-get($breakpoints, $breakpointName))}) {
+       @content;
+    }
+  }
+  @else {
+     @error"There is no breakpoint `#{$breakpointName}` in the breakpoints map.";
+  }
+}
+//----------------------------
+// MEDIA QUERY MAX-WIDTH
+// Set CSS properties for a given media query without writing each time '@media screen and (max-width: xxx)'.
+//----------------------------
+//USAGE EXAMPLE
+/*
+.demo {
+    background-color: red;
+    @include mqMax(w4) {
+	    background-color: blue;
+	}
+}
+*/
+@mixin mqMax($breakpointName) {
+   @if map-has-key($breakpointsMax, $breakpointName){
+    @media screen and (max-width: #{inspect(map-get($breakpointsMax, $breakpointName))}) {
+       @content;
+    }
+  }
+  @else {
+     @error"There is no breakpoint `#{$breakpointName}` in the breakpoints map.";
+  }
+}
+//----------------------------
+// MEDIA QUERY RANGE
+// Set CSS properties for a given media query without writing each time '@media screen and (min-width: xxx) and (max-width: xxx)'.
+//----------------------------
+//USAGE EXAMPLE
+/*
+.demo {
+    background-color: red;
+    @include mqRange(w2, w4) {
+	    background-color: blue;
+	}
+}
+*/
+@mixin mqRange($breakpointMinName, $breakpointMaxName) {
+   @if map-has-key($breakpoints, $breakpointMinName) and map-has-key($breakpointsMax, $breakpointMaxName){
+    @media screen and (min-width: #{inspect(map-get($breakpoints, $breakpointMinName))}) and (max-width: #{inspect(map-get($breakpointsMax, $breakpointMaxName))}) {
+       @content;
+    }
+  }
+  @else {
+     @error"One or both of the breakpoints `#{$breakpointMinName}`,`#{$breakpointMaxName}` could not be found in the breakpoints map.";
+  }
+}

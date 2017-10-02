@@ -1,0 +1,31 @@
+table {
+  @extend %border-0;
+  @extend %border-collapse-collapse;
+  @extend %border-spacing-0;
+  @extend %border-color-transparent;
+}
+caption {
+  @extend %font-weight-normal;
+  @extend %text-align-left;
+}
+thead,
+tbody,
+tfoot {
+  //
+}
+tr {
+  @extend %border-color-transparent;
+}
+th {
+  @extend %font-weight-normal;
+  @extend %text-align-left;
+}
+td {
+  //
+}
+colgroup {
+  //
+}
+col {
+  //
+}

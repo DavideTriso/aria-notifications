@@ -1,6 +1,6 @@
 # ARIA NOTIFICATIONS
 
-jQuery plugin for **accessible** notifications. **WAI ARIA 1.1** compliant.
+jQuery plugin for **user-friendly** and **accessible** notifications. **WAI ARIA 1.1** compliant.  [Go to demo page](https://davidetriso.github.io/aria-notifications/) or [check on npm](https://www.npmjs.com/package/t-aria-notifications).
 
 * User friendly and accessible
 * Only 2KB (minified).
@@ -31,6 +31,16 @@ fadeOutSpeed | 800 | int >= 0 | Duration (in milliseconds) of the fade-out anima
 cssTransitions | false | bool | Use css transitions to show and hide a notification instead of jQuery fade animations. Read section 'Using CSS transitions' for more informations.
 
 
+## Installation
+
+Download the package from **GitHub** and get the compiled files from the `dist` folder.
+
+The plugin is also available on **npm**:
+```
+npm install t-aria-notifications
+```
+
+
 ## Usage
 
 1. Include the JS script **aria-notifications.js** - or the minified production script **aria-notifications.min.js** - in the head or the body of your HTML file.
@@ -44,8 +54,18 @@ Use following HTML markup to implement a notification:
 
 
 ```html
-   <div class="notification">
-    <div class="notification__message" id="notification__message--1">
+  <!-- SIMPLE NOTIFICATION (Preferred implementation) -->
+  <div class="notification">
+    <div class="notification__message">
+      <p>The changes you made were automatically saved</p>
+    </div>
+  </div>
+  
+  <!-- OR -->
+  
+  <!-- DISMISSABLE NOTIFICATION -->
+  <div class="notification">
+    <div class="notification__message">
       <p>The changes you made were automatically saved</p>
     </div>
     <button class="notification__dismiss-btn" type="button" aria-label="Close notification">
@@ -53,6 +73,7 @@ Use following HTML markup to implement a notification:
     </button>
   </div>
 ```
+For more examples of possible HTML implementations check the file `dist/aria-notifications.html` and/or the [demo page](https://davidetriso.github.io/aria-notifications/))
 
 ### JS: Initialisation
 
@@ -123,7 +144,7 @@ $('.notification').ariaNotifications();
 
 ## Using CSS transitions
 
-By default the plugin is configured to use the jQuery methods `fadeIn()` and `fadeOut()` to show/hide notifications. Setting the option **cssTransitions** to 'true' will disable the JS animations. This will make possible to implement the transitions with css. In fact, the plugin toggles the class passed along with the options **notificationVisibleClass** every time the visibbility of the notification is toggled.
+By default the plugin is configured to use the jQuery methods `fadeIn()` and `fadeOut()` to show/hide notifications. Setting the option **cssTransitions** to 'true' will disable the JS animations and make possible to implement the transitions with css. In fact, the plugin toggles the class passed along with the options **notificationVisibleClass** every time the visibbility of the notification is toggled.
 
 
 ## Inject dialogs dinamically

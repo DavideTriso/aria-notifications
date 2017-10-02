@@ -1,35 +1,9 @@
-//----------------------
-//BLOCK
-//----------------------
-
-.notification {
-  padding: 0.5rem;
-  position: relative;
-}
-//----------------------
-//ELEMENTS
-//----------------------
-
-.notification__message {
-  background-color: #3180d0;
-  color: #fff;
-  padding: 0.5rem 1.5rem;
-}
-
-.notification__dismiss-btn {
-  margin: 0.5rem;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-//----------------------
-//MODIFIERS
-//----------------------
-
-.notification__message_alert {
-  background-color: #ae3636;
-}
-
-.notification__message_succsess {
-  background-color: #1ba129;
-}
+@import '../../node_modules/t-css-framework/settings/import';
+@import '../../node_modules/t-css-framework/functions/import';
+@import '../../node_modules/t-css-framework/css-placeholders/import';
+@import '../../node_modules/t-css-framework/responsive-helpers/import';
+@import '../../node_modules/t-css-framework/ui-helpers/import';
+@import '../../node_modules/t-css-framework/grid/import';
+@import "notification/notification";
+@import "notification/notification__elements";
+@import "notification/notification_modifiers";

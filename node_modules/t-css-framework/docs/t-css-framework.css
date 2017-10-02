@@ -1,0 +1,257 @@
+html,
+body {
+  font-family: sans-serif;
+}
+
+input[type=search] {
+  -webkit-appearance: textfield;
+}
+
+fieldset {
+  padding-top: 0.01em 0 0 0;
+}
+
+legend + * {
+  clear: both;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-box-sizing: border-box;
+}
+
+mark, button,
+input,
+select,
+textarea {
+  background-color: transparent;
+}
+
+table, button,
+input,
+select,
+textarea, fieldset {
+  border: 0;
+}
+
+table, tr {
+  border-color: transparent;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+button,
+input,
+select,
+textarea, fieldset {
+  border-radius: 0;
+}
+
+table {
+  border-spacing: 0;
+}
+
+*, :before,
+:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+mark {
+  color: inherit;
+}
+
+html,
+body, a, a:focus, a:hover, a:active {
+  color: #000;
+}
+
+q:before, q:after {
+  content: none;
+}
+
+img,
+map,
+figure,
+picture {
+  display: block;
+}
+
+legend {
+  display: table;
+}
+
+body:not(:-moz-handler-blocked) fieldset {
+  display: table-cell;
+}
+
+::-webkit-search-decoration {
+  display: none;
+}
+
+legend {
+  float: left;
+}
+
+code, kbd, pre, samp, button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p, button,
+input,
+select,
+textarea, label,
+legend, output, figcaption {
+  font-size: 1rem;
+}
+
+address, cite, dfn, em, i, var, dl,
+dt,
+li,
+menuitem, figcaption {
+  font-style: normal;
+}
+
+caption, th {
+  font-weight: normal;
+}
+
+strong {
+  font-weight: 400;
+}
+
+img,
+map,
+figure,
+picture, canvas {
+  height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  line-height: 1;
+}
+
+dl,
+menu,
+ol,
+ul {
+  list-style: none;
+}
+
+dl,
+menu,
+ol,
+ul {
+  list-style-position: inside;
+}
+
+html,
+body, h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p, blockquote, pre, dl,
+menu,
+ol,
+ul,
+dt,
+li,
+menuitem, button,
+input,
+select,
+textarea, fieldset, label,
+legend, img,
+map,
+figure,
+picture {
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100%;
+}
+
+html,
+body {
+  min-width: 100%;
+}
+
+fieldset {
+  min-width: 0;
+}
+
+a, a:focus, a:hover, a:active, button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+html,
+body, h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p, blockquote, dl,
+menu,
+ol,
+ul,
+dt,
+li,
+menuitem, button,
+input,
+select,
+textarea, label,
+legend, img,
+map,
+figure,
+picture {
+  padding: 0;
+}
+
+caption, th {
+  text-align: left;
+}
+
+abbr, del, ins, s, u, a, a:focus, a:hover, a:active {
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  vertical-align: middle;
+}
+
+legend, img,
+map,
+figure,
+picture, canvas {
+  width: 100%;
+}
+
+/*
+@include generateResponsiveGutter($guttersBreakpointsMap, $smallGuttersList, $containerClassName, $rowClassName, $columnClassName, $smallGutterModifierName);
+@include generateResponsiveGutter($guttersBreakpointsMap, $largeGuttersList, $containerClassName, $rowClassName, $columnClassName, $largeGutterModifierName);*/

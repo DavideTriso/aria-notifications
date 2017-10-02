@@ -1,0 +1,23 @@
+//----------------------
+//ELEMENTS
+//----------------------
+
+.notification__message {
+  background-color: #750f7e;
+  @extend %color-white;
+  @extend %r-ptb_1;
+  @extend %r-plr_2;
+  @extend %border-style-solid;
+
+  p {
+    @extend %r-mtb_2;
+  }
+}
+
+.notification__dismiss-btn {
+  @extend %r-mt_5;
+  @extend %r-mr_2;
+  @extend %right-0;
+  @extend %position-absolute;
+  @extend %top-0;
+}

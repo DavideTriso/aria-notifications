@@ -6,29 +6,134 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Aria Notifications demo</title>
   <link rel="stylesheet" href="aria-notifications.css">
+  <style>
+    body {
+      max-width: 1000px;
+      margin: auto;
+      font-family: sans-serif;
+    }
+
+    .btn {
+      display: block;
+      max-width: 300px;
+      text-align: center;
+      text-decoration: none;
+      background-color: #6216c9;
+      color: #fff;
+      padding: 15px;
+      border-radius: 5px;
+      border: 1px solid #510cad;
+      margin: 60px auto;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      background-color: #510cad;
+    }
+
+    .btn:avtive {
+      background-color: #6216c9;
+    }
+  </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="aria-notifications.js"></script>
   <script>
-$(document).ready(function () {
-  'use strict';
-  var notification = $('.notification').ariaNotifications({
-    timer: 10000,
-    alert: true
-  });
-  notification.ariaNotifications('show');
-});
-</script>
+    $(document).ready(function() {
+      'use strict';
+      var defaultN = $('#default'),
+        dismiss = $('#dismiss'),
+        alert = $('#alert'),
+        warning = $('#warning'),
+        succsess = $('#succsess'),
+        info = $('#info');
+
+
+      defaultN.ariaNotifications({
+        fadeOutSpeed: 300,
+        fadeInSpeed: 400
+      });
+
+      dismiss.ariaNotifications({
+        fadeOutSpeed: 300,
+        fadeInSpeed: 800
+      });
+
+      alert.ariaNotifications({
+        alert: true,
+        fadeInSpeed: 1200
+      });
+
+      warning.ariaNotifications({
+        fadeOutSpeed: 1000,
+        fadeInSpeed: 1600
+      });
+
+      succsess.ariaNotifications({
+        timer: 10000,
+        fadeInSpeed: 2000
+      });
+
+      info.ariaNotifications({});
+
+      defaultN.ariaNotifications('show');
+      dismiss.ariaNotifications('show');
+      alert.ariaNotifications('show');
+      warning.ariaNotifications('show');
+      succsess.ariaNotifications('show');
+      info.ariaNotifications('show');
+    });
+  </script>
 </head>
 
 <body>
-  <div class="notification">
+  <h1>Aria notification Demo</h1>
+
+  <h2>Default notification</h2>
+  <div class="notification" id="default">
     <div class="notification__message">
       <p>Your changes were saved</p>
     </div>
-    <button class="notification__dismiss-btn" type="button" aria-label="Close notification">
-      <span aria-hidden="true">x</span>
-    </button>
   </div>
+
+  <h2>Notification with dismiss button</h2>
+  <div class="notification" id="dismiss">
+    <div class="notification__message">
+      <p>Product added to cart</p>
+    </div>
+    <button class="notification__dismiss-btn" type="button" aria-label="Close notification">
+            <span aria-hidden="true">x</span>
+        </button>
+  </div>
+
+  <h2>Alert notification</h2>
+  <div class="notification" id="alert">
+    <div class="notification__message notification__message_alert">
+      <p>Your session is expired. Please login again</p>
+    </div>
+  </div>
+
+  <h2>Warning notification</h2>
+  <div class="notification" id="warning">
+    <div class="notification__message notification__message_warning">
+      <p>We have less than 10 pieces on stock.</p>
+    </div>
+  </div>
+
+  <h2>Succsess notification (+ timer/autodismiss)</h2>
+  <div class="notification" id="succsess">
+    <div class="notification__message notification__message_succsess">
+      <p>Product added to cart</p>
+    </div>
+  </div>
+
+  <h2>Info notification</h2>
+  <div class="notification" id="info">
+    <div class="notification__message notification__message_info">
+      <p><strong>Free shipping</strong>: add products for the value of 15 &euro; more to your cart and get free shipping.</p>
+    </div>
+  </div>
+  <a href="https://github.com/DavideTriso/aria-notifications" class="btn">Check documentation</a>
+
 </body>
 
 </html>

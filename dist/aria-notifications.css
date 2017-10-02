@@ -1,19 +1,88 @@
-.notification {
-  padding: 0.5rem;
-  position: relative;
+.notification__message {
+  border-style: solid;
 }
 
 .notification__message {
-  background-color: #3180d0;
   color: #fff;
-  padding: 0.5rem 1.5rem;
 }
 
 .notification__dismiss-btn {
-  margin: 0.5rem;
   position: absolute;
+}
+
+.notification {
+  position: relative;
+}
+
+.notification__dismiss-btn {
   right: 0;
+}
+
+.notification__dismiss-btn {
   top: 0;
+}
+
+.notification {
+  width: 100%;
+}
+
+/*
+.demo {
+    background-color: red;
+    @include mqMin(w4) {
+	    background-color: blue;
+	}
+}
+*/
+/*
+.demo {
+    background-color: red;
+    @include mqMax(w4) {
+	    background-color: blue;
+	}
+}
+*/
+/*
+.demo {
+    background-color: red;
+    @include mqRange(w2, w4) {
+	    background-color: blue;
+	}
+}
+*/
+.notification__message p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.notification__dismiss-btn {
+  margin-top: 1.25rem;
+}
+
+.notification__dismiss-btn {
+  margin-right: 0.5rem;
+}
+
+.notification__message {
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
+.notification {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+.notification__message {
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+
+/*
+@include generateResponsiveGutter($guttersBreakpointsMap, $smallGuttersList, $containerClassName, $rowClassName, $columnClassName, $smallGutterModifierName);
+@include generateResponsiveGutter($guttersBreakpointsMap, $largeGuttersList, $containerClassName, $rowClassName, $columnClassName, $largeGutterModifierName);*/
+.notification__message {
+  background-color: #750f7e;
 }
 
 .notification__message_alert {
@@ -22,4 +91,12 @@
 
 .notification__message_succsess {
   background-color: #1ba129;
+}
+
+.notification__message_warning {
+  background-color: #ff6a00;
+}
+
+.notification__message_info {
+  background-color: #2a9ed6;
 }

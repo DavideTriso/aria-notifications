@@ -1,0 +1,9 @@
+//--------------------------
+// CLAMP NUMBER
+// keep the initial value of $value if the number is living in the range imposed by $min and $max,
+// if $value is lower than $min, return $min as value,
+// if $value is greater than $max, return $max.
+//--------------------------
+@function clampNumber($value, $min, $max) {
+  @return if($value > $max, $max, if($value < $min, $min, $value));
+}

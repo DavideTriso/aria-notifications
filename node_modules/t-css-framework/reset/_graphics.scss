@@ -1,0 +1,18 @@
+img,
+map,
+figure,
+picture {
+  @extend %display-block;
+  @extend %height-auto;
+  @extend %margin-0;
+  @extend %padding-0;
+  @extend %width-100;
+}
+canvas {
+  @extend %height-auto;
+  @extend %width-100;
+}
+figcaption {
+  @extend %font-style-normal;
+  @extend %font-size-1rem;
+}
