@@ -1,25 +1,11 @@
 .notification__message {
-  border-style: solid;
-}
-
-.notification__message {
   color: #fff;
 }
 
-.notification__dismiss-btn {
-  position: absolute;
-}
-
-.notification {
-  position: relative;
-}
-
-.notification__dismiss-btn {
-  right: 0;
-}
-
-.notification__dismiss-btn {
-  top: 0;
+.notification__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .notification {
@@ -55,15 +41,11 @@
   margin-bottom: 0.5rem;
 }
 
-.notification__dismiss-btn {
-  margin-top: 1.25rem;
+.notification__control {
+  margin-left: 0.5rem;
 }
 
-.notification__dismiss-btn {
-  margin-right: 0.5rem;
-}
-
-.notification__message {
+.notification__box {
   padding-top: 0.2rem;
   padding-bottom: 0.2rem;
 }
@@ -73,7 +55,7 @@
   padding-bottom: 0.8rem;
 }
 
-.notification__message {
+.notification__box {
   padding-left: 0.4rem;
   padding-right: 0.4rem;
 }
@@ -81,22 +63,34 @@
 /*
 @include generateResponsiveGutter($guttersBreakpointsMap, $smallGuttersList, $containerClassName, $rowClassName, $columnClassName, $smallGutterModifierName);
 @include generateResponsiveGutter($guttersBreakpointsMap, $largeGuttersList, $containerClassName, $rowClassName, $columnClassName, $largeGutterModifierName);*/
-.notification__message {
+.notification__box {
   background-color: #750f7e;
 }
 
-.notification__message_alert {
+.notification__message {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.notification__control {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+}
+
+.notification__box_alert {
   background-color: #ae3636;
 }
 
-.notification__message_succsess {
+.notification__box_succsess {
   background-color: #1ba129;
 }
 
-.notification__message_warning {
+.notification__box_warning {
   background-color: #ff6a00;
 }
 
-.notification__message_info {
+.notification__box_info {
   background-color: #2a9ed6;
 }

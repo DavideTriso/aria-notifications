@@ -1,11 +1,13 @@
 # ARIA NOTIFICATIONS
 
-jQuery plugin for **user-friendly** and **accessible** notifications. **WAI ARIA 1.1** compliant.  [Go to demo page](https://davidetriso.github.io/aria-notifications/) or [check on npm](https://www.npmjs.com/package/t-aria-notifications).
 
-* User friendly and accessible
-* Only 2KB (minified).
-* Runs in strict mode.
-* Compatible with amd and require.js
+HTML, CSS and JS **user-friendly** and **accessible** notification UI-component for scalable projects. **WAI ARIA 1.1** compliant.  [Go to demo page](https://davidetriso.github.io/aria-notifications/) or [check on npm](https://www.npmjs.com/package/t-aria-notifications).
+
+* Developed following BEM methodology
+* User-friendly and accessible
+* Only 2KB JS (minified)
+* JS plugin runs in strict mode
+* Compatible with UMD
 
 ## Dependencies
 
@@ -26,9 +28,11 @@ messageClass | notification__message | string | Class used from plugin to select
 dismissBtnClass | notification__dismiss-btn | string | Class used from the plugin to select the dismiss button, if it exists.
 alert | false | bool | Set to true to expose an alert message to AT. If set to false, notification will be exposed as a simple status notification.
 timer | false | bool or int >= 0 | Automatically hide the notification after the time (in milliseconds) passed is elapsed.
-fadeInSpeed | 200 | int >= 0 | Duration (in milliseconds) of the fade-in animation
-fadeOutSpeed | 800 | int >= 0 | Duration (in milliseconds) of the fade-out animation
-cssTransitions | false | bool | Use css transitions to show and hide a notification instead of jQuery fade animations. Read section 'Using CSS transitions' for more informations.
+slideDownSpeed | 100 | int >= 0 | Duration (in ms) of the slide-down animation, which is performed on the `.notification` element.
+fadeInSpeed | 200 | int >= 0 | Duration (in ms) of the fade-in animation, performed on the `.notification__box` element, after the slide-down animation of the `.notification` element is completed.
+fadeOutSpeed | 800 | int >= 0 | Duration (in ms) of the fade-out animation, performed on the `.notification__box` element.
+slideUpSpeed | 100 | int >= 0 | Duration (in ms) of the slide-up animation, which is performed on the `.notification` element, after the fade-out animation of the `.notification__box` element is completed.
+cssTransitions | false | bool | Use css transitions to show and hide a notification instead of jQuery fade and slide animations. Read section 'Using CSS transitions' for more informations.
 
 
 ## Installation
@@ -60,10 +64,10 @@ Use following HTML markup to implement a notification:
       <p>The changes you made were automatically saved</p>
     </div>
   </div>
-  
+
   <!-- OR -->
-  
-  <!-- DISMISSABLE NOTIFICATION -->
+
+  <!-- DISMISSIBLE NOTIFICATION -->
   <div class="notification">
     <div class="notification__message">
       <p>The changes you made were automatically saved</p>
@@ -144,7 +148,7 @@ $('.notification').ariaNotifications();
 
 ## Using CSS transitions
 
-By default the plugin is configured to use the jQuery methods `fadeIn()` and `fadeOut()` to show/hide notifications. Setting the option **cssTransitions** to 'true' will disable the JS animations and make possible to implement the transitions with css. In fact, the plugin toggles the class passed along with the options **notificationVisibleClass** every time the visibbility of the notification is toggled.
+By default the plugin is configured to use the jQuery methods `fadeIn()`, `fadeOut()` and `slideDown()`, `slideUp()` to show/hide notifications. Setting the option **cssTransitions** to 'true' will disable the JS animations and make possible to implement the transitions with css. In fact, the plugin toggles the class passed along with the options **notificationVisibleClass** every time the visibility of the notification is toggled.
 
 
 ## Inject dialogs dinamically

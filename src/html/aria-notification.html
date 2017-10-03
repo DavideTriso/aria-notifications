@@ -1,30 +1,35 @@
 <!--DISMISSABLE NOTIFICATION-->
 <div class="notification">
-  <div class="notification__message">
-    <p>Your changes were saved</p>
-  </div>
-
-  <button class="notification__dismiss-btn" type="button" aria-label="Close notification">
-        <span aria-hidden="true">x</span>
-    </button>
-  <!--
-        The button is element of the block notification and a block at the same time
-        The class 'notification__dismiss-btn' is only intended for positioning the button inside the widget
-        and for having a consistent way to select the element in scripting with aria-notifications.js.
-        To applyt styles to the button use another block-level class (e.g. .btn)
-    -->
+    <div class="notification__box">
+        <div class="notification__message">
+            <p>Your changes were saved</p>
+        </div>
+        <div class="notification__control">
+            <button class="notification__dismiss-btn" type="button" aria-label="Close notification">
+                <span aria-hidden="true">x</span>
+            </button>
+            <!--
+                The button is element of the block notification and a block at the same time
+                The class 'notification__dismiss-btn' is only needed to have a consistent way
+                to select the button with scripting with aria-notifications.js.
+                To applyt styles to the button use another block-level class (e.g. .btn)
+            -->
+        </div>
+    </div>
 </div>
-
 <!--NON DISMISSABLE NOTIFICATION-->
 <div class="notification">
-  <div class="notification__message">
-    <p>Your changes were saved</p>
-  </div>
+    <div class="notification__box">
+        <div class="notification__message">
+            <p>Your changes were saved</p>
+        </div>
+    </div>
 </div>
-
 <!-- NOTIFICATION WITH STYLE MODIFIER -->
 <div class="notification">
-  <div class="notification__message notification__message_alert">
-    <p>Your changes were saved</p>
-  </div>
+    <div class="notification__box">
+        <div class="notification__message notification__message_alert">
+            <p>Your changes were saved</p>
+        </div>
+    </div>
 </div>

@@ -10,25 +10,25 @@
 //
 //SKINS AND STYLES
 
-.notification__message_alert {
+.notification__box_alert {
   background-color: #ae3636;
   //@include border();
   //@extend %color-white;
 }
 
-.notification__message_succsess {
+.notification__box_succsess {
   background-color: #1ba129;
   //@include border();
   //@extend %color-white;
 }
 
-.notification__message_warning {
+.notification__box_warning {
   background-color: #ff6a00;
   //@include border();
   //@extend %color-white;
 }
 
-.notification__message_info {
+.notification__box_info {
   background-color: #2a9ed6;
   //@include border();
   //@extend %color-white;

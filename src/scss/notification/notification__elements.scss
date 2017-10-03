@@ -2,22 +2,29 @@
 //ELEMENTS
 //----------------------
 
-.notification__message {
+.notification__box {
   background-color: #750f7e;
-  @extend %color-white;
+  //@include border();
+  //@extend %border-style-solid;
+  @extend %display-flex;
   @extend %r-ptb_1;
   @extend %r-plr_2;
-  @extend %border-style-solid;
+}
+
+.notification__message {
+  @extend %color-white;
+  flex: 1 1 auto;
 
   p {
     @extend %r-mtb_2;
   }
 }
 
+.notification__control {
+  flex: 0 1 auto;
+  @extend %r-ml_2;
+}
+
 .notification__dismiss-btn {
-  @extend %r-mt_5;
-  @extend %r-mr_2;
-  @extend %right-0;
-  @extend %position-absolute;
-  @extend %top-0;
+  //
 }
