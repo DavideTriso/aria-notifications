@@ -3,6 +3,6 @@
 //----------------------
 
 .notification {
-  @extend %r-ptb_4;
-  @extend %width-100;
+  @include padding($notification--padding);
+  @include sizes($notification--sizes);
 }

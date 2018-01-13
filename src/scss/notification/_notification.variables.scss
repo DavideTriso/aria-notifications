@@ -1,0 +1,91 @@
+//BLOCK
+$notification--padding: (
+  top   : 0.4rem,
+  bottom: 0.4rem
+)
+!default;
+
+$notification--sizes: (
+  width: 100%
+)
+!default;
+
+//ELEMENTS
+//box
+$notification__box--background: (
+  backgroundColor: $defaultColor
+)
+!default;
+$notification__box--border: (
+  borderStyle : solid,
+  borderWidth : 0.05rem,
+  borderRadius: 0.1rem,
+  borderColor : darken($defaultColor, 3%)
+)
+!default;
+
+$notification__box--padding: (
+  topBottom: 0.3rem,
+  leftRight: 0.6rem
+)
+!default;
+//modifiers
+//alert
+$notification__box_alert--background: (
+  backgroundColor: $alertColor
+)
+!default;
+$notification__box_alert--border: (
+  borderColor: darken($alertColor, 3%)
+)
+!default;
+//success
+$notification__box_success--background: (
+  backgroundColor: $successColor
+)
+!default;
+$notification__box_success--border: (
+  borderColor: darken($successColor, 3%)
+)
+!default;
+//warning
+$notification__box_warning--background: (
+  backgroundColor: $warningColor
+)
+!default;
+$notification__box_warning--border: (
+  borderColor: darken($warningColor, 3%)
+)
+!default;
+
+//message
+$notification__message--font: (
+  fontSize: $fontSize
+)
+!default;
+$notification__message--text: (
+  color: darken($defaultColor, 40%)
+)
+!default;
+
+$notification__message--paragraph-margin: (
+  top   : 0.2rem,
+  bottom: 0.2rem
+)
+!default;
+//modifiers
+//alert
+$notification__message_alert--text: (
+  color: darken($alertColor, 40%)
+)
+!default;
+//success
+$notification__message_success--text: (
+  color: darken($successColor, 40%)
+)
+!default;
+//warning
+$notification__message_warning--text: (
+  color: darken($warningColor, 40%)
+)
+!default;

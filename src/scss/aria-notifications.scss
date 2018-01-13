@@ -1,9 +1,16 @@
-@import '../../node_modules/t-css-framework/settings/import';
-@import '../../node_modules/t-css-framework/functions/import';
-@import '../../node_modules/t-css-framework/css-placeholders/import';
-@import '../../node_modules/t-css-framework/responsive-helpers/import';
-@import '../../node_modules/t-css-framework/ui-helpers/import';
-@import '../../node_modules/t-css-framework/grid/import';
+//import settings
+@import "aria-notifications.settings";
+
+//import t-css-framework modules
+@import "../../node_modules/t-css-framework/src/settings/settings.import";
+@import "../../node_modules/t-css-framework/src/functions/functions.import";
+@import "../../node_modules/t-css-framework/src/helpers/helpers.import";
+
+//import notification modules
+@import "notification/notification.variables";
 @import "notification/notification";
 @import "notification/notification__elements";
-@import "notification/notification_modifiers";
+@import "notification/modifiers/notification_alert";
+@import "notification/modifiers/notification_success";
+@import "notification/modifiers/notification_warning";
+@import "notification/modifiers/notification_visible";

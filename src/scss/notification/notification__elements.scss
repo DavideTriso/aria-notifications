@@ -3,26 +3,24 @@
 //----------------------
 
 .notification__box {
-  background-color: #750f7e;
-  //@include border();
-  //@extend %border-style-solid;
-  @extend %display-flex;
-  @extend %r-ptb_1;
-  @extend %r-plr_2;
+  @include background($notification__box--background);
+  @include border($notification__box--border);
+  display: flex;
+  @include padding($notification__box--padding);
 }
 
 .notification__message {
-  @extend %color-white;
+  @include font($notification__message--font);
+  @include text($notification__message--text);
   flex: 1 1 auto;
 
   p {
-    @extend %r-mtb_2;
+    @include margin($notification__message--paragraph-margin);
   }
 }
 
 .notification__control {
   flex: 0 1 auto;
-  @extend %r-ml_2;
 }
 
 .notification__dismiss-btn {

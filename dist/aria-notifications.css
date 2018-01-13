@@ -1,17 +1,3 @@
-.notification__message {
-  color: #fff;
-}
-
-.notification__box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.notification {
-  width: 100%;
-}
-
 /*
 .demo {
     background-color: red;
@@ -36,41 +22,34 @@
 	}
 }
 */
-.notification__message p {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.notification__control {
-  margin-left: 0.5rem;
-}
-
-.notification__box {
-  padding-top: 0.2rem;
-  padding-bottom: 0.2rem;
-}
-
 .notification {
-  padding-top: 0.8rem;
-  padding-bottom: 0.8rem;
+  padding-bottom: 0.4rem;
+  padding-top: 0.4rem;
+  width: 100%;
 }
 
 .notification__box {
-  padding-left: 0.4rem;
-  padding-right: 0.4rem;
-}
-
-/*
-@include generateResponsiveGutter($guttersBreakpointsMap, $smallGuttersList, $containerClassName, $rowClassName, $columnClassName, $smallGutterModifierName);
-@include generateResponsiveGutter($guttersBreakpointsMap, $largeGuttersList, $containerClassName, $rowClassName, $columnClassName, $largeGutterModifierName);*/
-.notification__box {
-  background-color: #750f7e;
+  background-color: #6aa6f1;
+  border-color: #5c9ef0;
+  border-radius: 0.1rem;
+  border-style: solid;
+  border-width: 0.05rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.3rem 0.6rem;
 }
 
 .notification__message {
+  font-size: 0.9rem;
+  color: #0c4183;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+}
+.notification__message p {
+  margin-bottom: 0.2rem;
+  margin-top: 0.2rem;
 }
 
 .notification__control {
@@ -79,18 +58,26 @@
           flex: 0 1 auto;
 }
 
-.notification__box_alert {
-  background-color: #ae3636;
+.notification_alert .notification__box {
+  background-color: #ed7171;
+  border-color: #eb6363;
+}
+.notification_alert .notification__message {
+  color: #821010;
 }
 
-.notification__box_succsess {
-  background-color: #1ba129;
+.notification_success .notification__box {
+  background-color: #33f26e;
+  border-color: #25f164;
+}
+.notification_success .notification__message {
+  color: #05541e;
 }
 
-.notification__box_warning {
-  background-color: #ff6a00;
+.notification_warning .notification__box {
+  background-color: #f49d50;
+  border-color: #f39542;
 }
-
-.notification__box_info {
-  background-color: #2a9ed6;
+.notification_warning .notification__message {
+  color: #713907;
 }

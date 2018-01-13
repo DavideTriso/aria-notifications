@@ -1,0 +1,10 @@
+.notification_alert {
+  .notification__box {
+    @include background($notification__box_alert--background);
+    @include border($notification__box_alert--border);
+  }
+
+  .notification__message {
+    @include text($notification__message_alert--text);
+  }
+}

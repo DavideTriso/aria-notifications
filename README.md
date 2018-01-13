@@ -151,11 +151,6 @@ $('.notification').ariaNotifications();
 By default the plugin is configured to use the jQuery methods `fadeIn()`, `fadeOut()` and `slideDown()`, `slideUp()` to show/hide notifications. Setting the option **cssTransitions** to 'true' will disable the JS animations and make possible to implement the transitions with css. In fact, the plugin toggles the class passed along with the options **notificationVisibleClass** every time the visibility of the notification is toggled.
 
 
-## Inject dialogs dinamically
-
-A compatible **extension to dynamically generate and inject notifications in the DOM** is provided at [https://github.com/DavideTriso/aria-notifications-generator](https://github.com/DavideTriso/aria-notifications-generator).
-
-
 ## LICENSE
 
 **Aria notifications** is licensed under the terms of the **MIT license**.
