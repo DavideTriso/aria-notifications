@@ -60,8 +60,10 @@ Use following HTML markup to implement a notification:
 ```html
   <!-- SIMPLE NOTIFICATION (Preferred implementation) -->
   <div class="notification">
-    <div class="notification__message">
-      <p>The changes you made were automatically saved</p>
+    <div class="notification__box">
+      <div class="notification__message">
+        <p>The changes you made were automatically saved</p>
+      </div>
     </div>
   </div>
 
@@ -69,12 +71,16 @@ Use following HTML markup to implement a notification:
 
   <!-- DISMISSIBLE NOTIFICATION -->
   <div class="notification">
-    <div class="notification__message">
-      <p>The changes you made were automatically saved</p>
+    <div class="notification__box">
+      <div class="notification__message">
+        <p>The changes you made were automatically saved</p>
+      </div>
+      <div class="notification__control">
+        <button class="notification__dismiss-btn" type="button" aria-label="Close notification">
+          <span aria-hidden="true">x</span>
+        </button>
+      </div>
     </div>
-    <button class="notification__dismiss-btn" type="button" aria-label="Close notification">
-      <span aria-hidden="true">x</span>
-    </button>
   </div>
 ```
 For more examples of possible HTML implementations check the file `dist/aria-notifications.html` and/or the [demo page](https://davidetriso.github.io/aria-notifications/))

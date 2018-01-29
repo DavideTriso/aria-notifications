@@ -178,12 +178,12 @@ SOFTWARE.
       switch (methodArg) {
       case 'show':
         if (!self.elementsStatus) {
-          self.showNotification(methodArg);
+          self.showNotification();
         }
         break;
       case 'dismiss':
         if (self.elementStatus) {
-          self.dismissNotification(methodArg);
+          self.dismissNotification();
         }
         break;
       }
