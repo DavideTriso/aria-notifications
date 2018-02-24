@@ -1,7 +1,7 @@
 {
   "name": "t-aria-notifications",
   "license": "MIT",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "HTML, CSS and JS user-friendly and accessible notification UI-component for scalable projects",
   "repository": {
     "type": "git",
